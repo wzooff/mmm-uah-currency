@@ -1,5 +1,5 @@
 # Module: mmm-uah-currency
-This is module for [MagicMirror](https://github.com/MichMich/MagicMirror) that gets todays currency rate from bank.gov.ua [API](https://bank.gov.ua/ua/open-data/api-dev) for choosen currency. 
+This is module for [MagicMirror](https://github.com/MichMich/MagicMirror) that gets todays currency rate (relates to UAH) from bank.gov.ua [API](https://bank.gov.ua/ua/open-data/api-dev) for choosen currency. 
 
 ## Installation
 1. Go to MagicMirror's `modules` folder and execute `git clone https://github.com/wzooff/mmm-uah-currency.git`.

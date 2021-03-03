@@ -7,7 +7,7 @@ Module.register("mmm-uah-currency",{
 		apiVersion: "v1",
 		currencyEndpoint: "statdirectory/exchange",
 
-		currencyCode: "USD",
+		currencyCodes: ["USD", "GBP", "EUR"],
 
 		retryDelay: 2500,
 		initialLoadDelay: 0, // 0 seconds delay
@@ -73,10 +73,15 @@ Module.register("mmm-uah-currency",{
 		this.loaded = true;
 
 		var currencyCode = this.config.currencyCode
-		this.currencyHtml = currencyCode + ": ";
-		this.currencyHtml += this.roundValue(data.find(x => x.cc === currencyCode).rate);
-
+		var currencyCodes = this.config.currencyCodes
+		this.currencyHtml = "";
+		currencyCodes.forEach(element => this.addCurrencyElement(element,data));
 		this.updateDom();
+	},
+
+	addCurrencyElement: function (element, data) {
+		this.currencyHtml += element + ": ";
+		this.currencyHtml += this.roundValue(data.find(x => x.cc === element).rate) + "&nbsp&nbsp";
 	},
 
 	// /* scheduleUpdate()
